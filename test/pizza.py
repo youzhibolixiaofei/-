@@ -7,3 +7,4 @@ def make_pizza(size, *toppings):
 
 make_pizza(19, 'pepperoni')
 make_pizza(20, 'mushrooms', 'green peppers', 'extra cheese')
+make_pizza(19, '不知道')
