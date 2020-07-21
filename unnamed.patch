@@ -1,0 +1,146 @@
+Index: test/gree_user().py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- test/gree_user().py	(date 1595231347618)
++++ test/gree_user().py	(date 1595231347618)
+@@ -0,0 +1,4 @@
++def greet_user(username):
++    """显示简单的问候语"""
++    print("Hello,"+ username.title() + "!")
++greet_user("李飞")
+\ No newline at end of file
+Index: test/formatted_name.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- test/formatted_name.py	(date 1595233393360)
++++ test/formatted_name.py	(date 1595233393360)
+@@ -0,0 +1,9 @@
++def get_formatted_name(first_name, last_name, middle_name=' '):
++    """返回整洁的姓名"""
++    if middle_name:
++        full_name = first_name +  middle_name +  last_name
++    else:
++        full_name = first_name +  last_name
++    return full_name.title()
++musician = get_formatted_name('李','飞')
++print(musician)
+\ No newline at end of file
+Index: test/pest.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- test/pest.py	(date 1595232489119)
++++ test/pest.py	(date 1595232489119)
+@@ -0,0 +1,7 @@
++def describe_pet(animal_type, pet_name='pangpang'):
++    """显示宠物的信息"""
++    print("\nI have a " + animal_type + ".")
++    print("My " + animal_type + "'s name is " + pet_name.title() + ".")
++describe_pet(animal_type='hamster', pet_name='harry')
++describe_pet(animal_type='dog', pet_name='wangwang')
++describe_pet('xixi')
+\ No newline at end of file
+Index: test/greeter.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- test/greeter.py	(date 1595234551813)
++++ test/greeter.py	(date 1595234551813)
+@@ -0,0 +1,11 @@
++def get_formatted_name(first_name, last_name):
++    """返回整洁的姓名"""
++    full_name = first_name + ' ' + last_name
++    return full_name.title()
++# 这是一个无限循环!
++while True:
++    print("\nPlease tell me your name:")
++    f_name = input("First name: ")
++    l_name = input("Last name: ")
++    formatted_name = get_formatted_name(f_name, l_name)
++    print("\nHello, " + formatted_name + "!")
+\ No newline at end of file
+Index: test/person.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- test/person.py	(date 1595234432065)
++++ test/person.py	(date 1595234432065)
+@@ -0,0 +1,8 @@
++def build_person(first_name, last_name, age=''):
++    """返回一个字典，其中包含有关一个人的信息"""
++    person = {'first': first_name, 'last': last_name}
++    if age:
++        person['age'] = age
++    return person
++musician = build_person('李', '飞', 27)
++print(musician)
+\ No newline at end of file
+Index: test/printing_models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- test/printing_models.py	(date 1595236962366)
++++ test/printing_models.py	(date 1595236962366)
+@@ -0,0 +1,19 @@
++def print_models(unprinted_designs, completed_models):
++    """ 模拟打印每个设计，直到没有未打印的设计为止
++    打印每个设计后，都将其移到列表completed_models中 """
++    while unprinted_designs:
++        current_design = unprinted_designs.pop()
++        # 模拟根据设计制作3D打印模型的过程
++        print("Printing model: " + current_design)
++        completed_models.append(current_design)
++def show_completed_models(completed_models):
++    """显示打印好的所有模型"""
++    print("\nThe following models have been printed:")
++    for completed_model in completed_models:
++        print(completed_model)
++
++unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
++completed_models = []
++
++print_models(unprinted_designs, completed_models)
++show_completed_models(completed_models)
+\ No newline at end of file
+Index: test/greet_users.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- test/greet_users.py	(date 1595235401150)
++++ test/greet_users.py	(date 1595235401150)
+@@ -0,0 +1,7 @@
++def greet_users(names):
++    """向列表中的每位用户都发出简单的问候"""
++    for name in names:
++        msg = "Hello, " + name.title() + "!"
++        print(msg)
++usernames = ['hannah', 'ty', 'margot']
++greet_users(usernames)
+\ No newline at end of file
+Index: test/pizza.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- test/pizza.py	(date 1595244761268)
++++ test/pizza.py	(date 1595244761268)
+@@ -0,0 +1,9 @@
++def make_pizza(size, *toppings):
++    """打印顾客点的所有配料"""
++    print("\nMaking a " + str(size) +
++          "-inch pizza with the following toppings:")
++    for toppings in toppings:
++        print("- " + toppings)
++
++make_pizza(19, 'pepperoni')
++make_pizza(20, 'mushrooms', 'green peppers', 'extra cheese')
+\ No newline at end of file
